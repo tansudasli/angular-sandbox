@@ -1,0 +1,18 @@
+<label for="serverName">Server name</label>
+<input type="text"
+       id="serverName"
+       class="form-control"
+       [(ngModel)]="serverName">
+
+<button class="btn btn-primary"
+        (click)="addServer()"
+        [disabled]="!isEnabled">Add Server</button>
+
+<!--w/ string interpolation-->
+<p>{{isEnabled}}</p>
+<!--w/ property binding-->
+<p [innerText]="isEnabled"></p>
+<p>Server creation status {{isAdded}}</p>
+
+<app-server></app-server>
+<app-server></app-server>
