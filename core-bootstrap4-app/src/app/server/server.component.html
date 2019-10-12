@@ -1,2 +1,9 @@
-<p>server {{id}} is {{ getServerStatus() }}!</p>
+
 <!--<p *ngIf="status === 'offline'">server {{id}} offline!</p>-->
+
+
+<!--w/ ngStyle directive - for dynamic styling !!-->
+<p [ngStyle]="{'background-color': getColor()}"
+   [ngClass]="{online: serverStatus === 'offline'}">Server {{id}} and {{serverStatus}}</p>
+
+

@@ -1,18 +1,37 @@
 <label for="serverName">Server name</label>
+<!--two-way binding-->
 <input type="text"
        id="serverName"
        class="form-control"
        [(ngModel)]="serverName">
 
+<!--w/ ngIf directive - directives are similar to css attributes -->
+<!--w/ ngStyle directive - for dynamic styling !!-->
+<!--w/ ngClass directive - for dynamic css class !!-->
+<p *ngIf="serverName; else noServer">Server w/ name {{serverName}}</p>
+<!--local ref w/ # -->
+<ng-template #noServer>
+  <p>No server added</p>
+</ng-template>
+
+<!--event binding w/ ()-->
+<!--property biding w/ []-->
 <button class="btn btn-primary"
         (click)="addServer()"
         [disabled]="!isEnabled">Add Server</button>
 
-<!--w/ string interpolation-->
-<p>{{isEnabled}}</p>
-<!--w/ property binding-->
-<p [innerText]="isEnabled"></p>
-<p>Server creation status {{isAdded}}</p>
+<!--directive - similar to css attributes -->
+<p *ngIf="isAdded">Server add status {{isAdded}}</p>
 
-<app-server></app-server>
-<app-server></app-server>
+<!--w/ string interpolation w/ {{}}-->
+<p>{{isEnabled}}</p>
+
+<!--w/ property binding w/ []-->
+<p [innerText]="isEnabled"></p>
+
+<!--dynamically use components-->
+<!--let i = index, reserved work index, to access index-->
+<app-server *ngFor="let server of servers; let i = index">
+
+</app-server>
+

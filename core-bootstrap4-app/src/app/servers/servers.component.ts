@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   isEnabled = false;
   isAdded = false;
-  serverName = 'enter server name';
+  serverName = '';
+  servers = [];
 
   constructor() {
 
@@ -23,7 +24,11 @@ export class ServersComponent implements OnInit {
   addServer() {
 
     this.isAdded = true;
+
+    this.servers.push(this.serverName);
   }
+
+
 
   // w/ [(ngModel)] we dont need to set input and serverName!!
   // updateServerName($event: Event) {
