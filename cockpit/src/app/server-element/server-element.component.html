@@ -2,11 +2,12 @@
 <div class="panel panel-default">
   <div class="panel-heading">{{ element.name }}</div>
   <div class="panel-body">
-
-      <p>
-        <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-        <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-      </p>
+<!-- replace w/ ng-content hook. so we can use it inside app.component -->
+<!--      <p>-->
+<!--        <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>-->
+<!--        <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>-->
+<!--      </p>-->
+    <ng-content></ng-content>
   </div>
 </div>
 

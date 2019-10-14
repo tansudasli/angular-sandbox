@@ -1,4 +1,5 @@
 <!--orchestrator components of -->
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -23,6 +24,13 @@
       <app-server-element
         *ngFor="let serverElement of serverElements"
         [element]="serverElement">
+
+<!--        ng-content hook from server-element.component . it provides sending html part from outside of a component!-->
+<!--        css parts related to below, must be inside server-element.component.css !!-->
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
 
       </app-server-element>
     </div>
