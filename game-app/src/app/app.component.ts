@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game-app';
+
+  onIntervalFired($event: number) {
+    console.log($event);
+  }
 }
