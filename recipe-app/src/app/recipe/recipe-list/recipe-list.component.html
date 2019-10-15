@@ -1,16 +1,18 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-xs-12">
     <button class="btn btn-primary">New Recipe</button>
   </div>
 </div>
 <hr>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-xs-12">
 
     <ul class="list-group"
         *ngFor="let recipe of recipes">
       <li class="list-group-item d-flex justify-content-between align-items-center"
-          style="margin-top: 5px">
+          style="margin-top: 5px"
+          (click)="onRecipeSelected(recipe)"
+          >
         <p class="mb-3">{{recipe.name}}</p>
         <img src="{{recipe.imagePath}}"
              alt="{{recipe.name}}"
@@ -18,8 +20,8 @@
              style="max-width: 50px; max-height: 50px">
       </li>
     </ul>
-
-    <app-recipe-item></app-recipe-item>
   </div>
+
+
 </div>
 
