@@ -33,17 +33,11 @@
       <h4 class="text-dark">Ingredients</h4>
       <p class="mb-1 text-dark"
          *ngFor="let ingredient of selectedRecipe.ingredients">
-          {{ingredient}}
+        <span class="badge">{{ingredient.amount}}</span>{{ingredient.name}}
       </p>
     </div>
   </div>
+
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-
-
-
-  </div>
-</div>
 
