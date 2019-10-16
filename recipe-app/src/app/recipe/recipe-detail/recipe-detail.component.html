@@ -26,9 +26,16 @@
              alt="{{selectedRecipe.name}}"
              class="img-responsive"
              style="max-width: 100%; max-height: 500px">
-        <p class="mb-1 text-secondary">{{selectedRecipe.name}}</p>
-        <p class="text-secondary">{{selectedRecipe.description}}</p>
+        <p class="mb-1 text-dark">{{selectedRecipe.name}}</p>
+        <p class="text-dark">{{selectedRecipe.description}}</p>
 
+    <div *ngIf="selectedRecipe.ingredients != null">
+      <h4 class="text-dark">Ingredients</h4>
+      <p class="mb-1 text-dark"
+         *ngFor="let ingredient of selectedRecipe.ingredients">
+          {{ingredient}}
+      </p>
+    </div>
   </div>
 </div>
 
