@@ -8,16 +8,16 @@
       <ul class="list-group"
           *ngFor="let i of numbers">
 <!--        1st way = style="background-color: gold"  -->
-<!--        2nd way = custom directive below   -->
+<!--        2nd way = custom directive, custom directive w/ Renderer2 or custom directive w/ HostListener & Renderer2   -->
 <!--        3rd way = [ngStyle]="{backgroundColor: i % 2 === 0 ? 'gold' : 'transparent'}" -->
 <!--        4th way = [ngClass]="{odd: i % 2 === 0}"  -->
         <li class="list-group-item"
-            appBasicHighlighting>
+            appBetterHighlighting>
           {{i}}
         </li>
       </ul>
       <ng-template [ngIf]="onlyOdd">
-        <p appBetterHighlighting>Only odd</p>
+        <p appBasicHighlighting>Only odd</p>
       </ng-template>
     </div>
   </div>
