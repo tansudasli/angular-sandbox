@@ -9,11 +9,17 @@
           *ngFor="let i of numbers">
 <!--        for DOM manipulations-->
 <!--        1st way = style="background-color: gold"  -->
-<!--        2nd way = custom directive, custom directive w/ Renderer2 or custom directive w/ HostListener & Renderer2   -->
+<!--        2nd way = custom directive,
+                      custom directive w/ Renderer2 or
+                      custom directive w/ HostListener & Renderer2,
+                      custom directive w/ HostListener & HostBinding,
+                      custom directive w/ HostListener & HostBinding & custom property binding   -->
 <!--        3rd way = [ngStyle]="{backgroundColor: i % 2 === 0 ? 'gold' : 'transparent'}" -->
 <!--        4th way = [ngClass]="{odd: i % 2 === 0}"  -->
         <li class="list-group-item"
-            appBetterHighlighting>
+            appBetterHighlighting
+            [defaultColor]="'yellow'"
+            [defaultBackgroundColor]="'red'">
           {{i}}
         </li>
       </ul>
