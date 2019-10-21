@@ -10,6 +10,8 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.comp
     HeaderComponent,
     RecipeComponent,
     RecipeListComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   exports: [
