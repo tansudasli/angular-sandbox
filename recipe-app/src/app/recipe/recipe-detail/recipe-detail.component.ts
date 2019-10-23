@@ -27,11 +27,11 @@ export class RecipeDetailComponent implements OnInit {
     });
 
     // 2- at first selection of recipe it is empty, then runs on selected a recipe
-    rs.recipeSelected.subscribe((recipe) => {
-      console.log(`loaded from recipeSelected event: ${recipe.name}`);
-
-      this.selectedRecipe = recipe;
-    });
+    // rs.recipeSelected.subscribe((recipe) => {
+    //   console.log(`loaded from recipeSelected event: ${recipe.name}`);
+    //
+    //   this.selectedRecipe = recipe;
+    // });
   }
 
   ngOnInit() {
