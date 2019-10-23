@@ -52,4 +52,19 @@ export class RecipeService {
   ];
 
   constructor() { }
+
+  /**
+   * gets Recipe by id
+   *
+   * @param id index++ number of recipes[]
+   */
+  getRecipe(id: number) {
+    return this.recipes[id--];
+  }
+
+  getRecipeId(recipe: Recipe) {
+    return this.recipes.findIndex((item) => {
+      return recipe.name === item.name;
+    });
+  }
 }

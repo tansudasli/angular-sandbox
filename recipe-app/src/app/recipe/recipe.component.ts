@@ -18,7 +18,5 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit() { }
 
-  onRecipeSelected($event) {
-    this.selectedRecipe = $event;
-  }
+
 }

@@ -14,7 +14,10 @@
         *ngFor="let recipe of rs.recipes">
       <li class="list-group-item d-flex justify-content-between align-items-center"
           style="margin-top: 5px"
-          (click)="onRecipeSelected(recipe)">
+          (click)="onRecipeSelected(recipe)"
+          routerLink="/recipe/{{this.rs.getRecipeId(recipe)}}"
+          routerLinkActive="active">
+
         <p class="mb-3">{{recipe.name}}</p>
         <img src="{{recipe.imagePath}}"
              alt="{{recipe.name}}"

@@ -12,6 +12,8 @@ import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component'
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EmptyRecipeComponent } from './recipe/empty-recipe/empty-recipe.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RecipeComponent,
     RecipeListComponent,
     RecipeDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmptyRecipeComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,

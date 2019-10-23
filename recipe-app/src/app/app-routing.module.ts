@@ -4,9 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import {EmptyRecipeComponent} from './recipe/empty-recipe/empty-recipe.component';
+import {RecipeDetailComponent} from './recipe/recipe-detail/recipe-detail.component';
 
 const appRoutes: Routes = [
-  { path: 'recipe', component: RecipeComponent },
+  { path: 'recipe', component: RecipeComponent, children: [
+      {path: '', component: EmptyRecipeComponent},
+      {path: ':id', component: RecipeDetailComponent}
+    ] },
   { path: 'shopping', component: ShoppingComponent },
   { path: '',   redirectTo: '/recipe', pathMatch: 'full' },  // at fist load
   { path: '**', component: PageNotFoundComponent }
