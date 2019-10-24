@@ -1,6 +1,7 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Recipe} from './recipe.model';
 import {Ingredient} from '../ingredient.model';
+import {Subject} from 'rxjs';
 
 /**
  * data
@@ -13,7 +14,8 @@ import {Ingredient} from '../ingredient.model';
 export class RecipeService {
 
   // we can subscribe this to get selected recipe. it is an observable !
-  recipeSelected = new EventEmitter<Recipe>();
+  // EventEmitter replaced w/ Subject - a better way
+  recipeSelected = new Subject<Recipe>();
 
   recipes: Recipe[] = [
     // tslint:disable-next-line:max-line-length

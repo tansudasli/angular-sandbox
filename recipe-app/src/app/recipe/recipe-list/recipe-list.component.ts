@@ -26,8 +26,9 @@ export class RecipeListComponent implements OnInit {
       console.log(recipe);
       console.log(`recipe id: ${this.rs.getRecipeId(recipe)}`);
 
-      this.rs.recipeSelected.emit(recipe);
-      this.router.navigate([`/recipe/${this.rs.getRecipeId(recipe)}`]);
+      this.rs.recipeSelected.next(recipe);
+       // programmatic approach instead of routerLink in html
+       // this.router.navigate([`/recipe/${this.rs.getRecipeId(recipe)}`]);
   }
 
 }
