@@ -1,9 +1,12 @@
 # angular-sandbox
 
-- semantics/ : all about angular semantics and `ng g ....` 
-- core-bootstrap4-app/: core concepts w/ bootstrap4 css
-- recipe-app/:  more realistic application w/ bootstrap4 css + custom events + custom directives
-- cockpit/: deep dive into data binding b/w components, decoupling components etc.
-- game-app/: basic custom event emitting scenario
+*more realistic application*
+- recipe-app:  more realistic application w/ bootstrap4 css and core concepts such as custom routing/events/directives/observables 
+
+*core-concepts*
+- core-binding: deep dive into data binding b/w components, decoupling components etc.
+- core-semantics: all about angular semantics such as `ng g ....` 
+- core-events: basic custom event emitting scenario
+- core-bootstrap4-app: core concepts w/ bootstrap4 css
 - core-directives: core concepts for directives and custom directives
 - core-observables: core concepts about observables and custom observables
