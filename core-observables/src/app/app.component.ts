@@ -14,23 +14,42 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit() {
+
+    // operators
     // interval(1000)
     //   .pipe(take(50))
     //   .subscribe((value) => {
     //     console.log(value);
     //   });
 
-    // standard observer
+    // standard observer w/ interval()
     // this.subscription = interval(1000).subscribe((value) => { console.log(value); },
     //                                                    (error) => { console.log(error); });
 
-    // custom observer of interval
+    // custom observer creation = of interval
     const customInterval = new Observable((observer) => {
       let counter = 0;
-      setInterval(() => { observer.next(counter++); }, 1000);
+
+      setInterval(() => {
+
+        // completion (not meaningful)
+        if (counter === 10) {
+          observer.complete();
+        }
+
+        // error management
+        if (counter === 15) {
+          observer.error(new Error('no counter can be bigger then 10 :)'));
+        }
+
+        observer.next(counter++);
+        }, 1000);
     });
 
-    customInterval.subscribe((value) => console.log(value));
+    // accessing custom observer
+    customInterval.subscribe((value) => console.log(value),
+                            (error) => console.log(error),
+                         () => console.log('completed'));
   }
 
   /**
