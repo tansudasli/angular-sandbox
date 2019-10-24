@@ -1,9 +1,11 @@
 # angular-sandbox
 
-*more realistic application*
-- recipe-app:  more realistic application w/ bootstrap4 css and core concepts such as custom routing/events/directives/observables 
+**more realistic application**
+- recipe-app:  recipe application 
+    - w/ bootstrap4 css, and 
+    - core concepts such as _custom_ (routing/events/directives/observables)
 
-*core-concepts*
+**core-concepts**
 - core-binding: deep dive into data binding b/w components, decoupling components etc.
 - core-semantics: all about angular semantics such as `ng g ....` 
 - core-events: basic custom event emitting scenario
