@@ -13,6 +13,10 @@
       <excludeFolder url="file://$MODULE_DIR$/core-directives/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/core-events/dist" />
       <excludeFolder url="file://$MODULE_DIR$/core-events/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/core-forms-reactive/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/core-forms-reactive/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/core-forms-template/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/core-forms-template/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/core-observables/dist" />
       <excludeFolder url="file://$MODULE_DIR$/core-observables/tmp" />
     </content>
