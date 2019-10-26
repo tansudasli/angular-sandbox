@@ -4,7 +4,8 @@
 <!--      angular will handle action. not form!-->
 <!--      so we need (ngSubmit) , # local ref. and ngModel & name bindings-->
 <!--      instead of onSubmit(f) , we can use @ViewChield decorator. So we can access values before submit!-->
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<!--      <form (ngSubmit)="onSubmit(f)" #f="ngForm">   -->
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
 
 <!--        ngModelGroup groups values and control in ngForm-->
 <!--         #userData="ngModelGroup" this gives us javascript representation. So we can use ngIf !!-->
@@ -18,10 +19,12 @@
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control"
                    ngModel
-                   name="name"
+                   name="username"
                    required>
           </div>
-          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <button class="btn btn-default"
+                  type="button"
+                  (click)="suggestUserName()">Suggest an Username</button>
 
           <div class="form-group">
             <label for="email">Mail</label>
@@ -70,6 +73,9 @@
                 type="submit"
         [disabled]="!f.valid">Submit</button>
 
+        <button class="btn btn-primary"
+                type="reset"
+                (click)="onReset()">Reset</button>
       </form>
     </div>
   </div>
