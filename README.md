@@ -13,4 +13,4 @@
 - core-directives: core concepts for directives and custom directives
 - core-observables: core concepts about observables and custom observables
 - core-forms-template: template-driven forms
-- core-forms-reactive: reactive approach handling forms
+- core-forms-reactive: reactive forms
