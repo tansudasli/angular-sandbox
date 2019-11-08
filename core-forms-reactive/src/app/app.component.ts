@@ -22,6 +22,18 @@ export class AppComponent implements  OnInit {
       'gender': new FormControl('male'),
 
     });
+
+    // we have 2 observables,
+    // this.signupForm.valueChanges.subscribe(value => {
+    //   // creates whenever user presses a key
+    //   console.log(value);
+    // });
+
+    this.signupForm.statusChanges.subscribe(value => {
+      // creates whenever field's status changes = INVALID, PENDING, VALID
+      console.log(value);
+    });
+
   }
 
   onSubmit() {
