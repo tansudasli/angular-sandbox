@@ -34,11 +34,30 @@ export class AppComponent implements  OnInit {
       console.log(value);
     });
 
+    // we can use setValue for all fields w/ json
+    this.signupForm.setValue({
+      'userData': {
+        'username': 'tansudasli',
+        'email': 'tansudasli@gmail.com'
+      },
+      'gender': 'female'
+    });
+
+    // or, we can use patchValue for partial set values
+    this.signupForm.patchValue({
+      'userData': {
+        'username': 'malibu',
+      }
+    });
+
   }
 
   onSubmit() {
     // same form group in template-driven. controls, value etc..
     console.log(this.signupForm);
+
+    // reset all values
+    this.signupForm.reset();
   }
 
   /**
