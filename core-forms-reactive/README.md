@@ -21,6 +21,12 @@ this.xyzForm = new FormGroup({
   'fieldName': new FormControl(null, [Validators.required, Validators.email])
 })
 ```
+
+2 types of validators available
+
+    - built-in or custom
+    - sync or async
+
 5. inside ts, add other functions
 ```
 onSubmit() {
