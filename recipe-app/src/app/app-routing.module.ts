@@ -14,8 +14,8 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 const appRoutes: Routes = [
   { path: 'recipe', component: RecipeComponent, children: [
       {path: '', component: EmptyRecipeComponent},
-      {path: 'create', component: RecipeEditComponent},
       {path: ':id', component: RecipeDetailComponent},
+      {path: 'create', component: RecipeEditComponent},
       {path: ':id/edit', component: RecipeEditComponent},
     ] },
   { path: 'shopping', component: ShoppingComponent },
