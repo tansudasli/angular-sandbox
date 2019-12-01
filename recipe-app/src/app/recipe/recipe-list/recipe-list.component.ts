@@ -1,8 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Recipe } from '../recipe.model';
+import {ActivatedRoute, Router} from '@angular/router';
+
+import {Recipe} from '../recipe.model';
 import {Ingredient} from '../../ingredient.model';
 import {RecipeService} from '../recipe.service';
-import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',

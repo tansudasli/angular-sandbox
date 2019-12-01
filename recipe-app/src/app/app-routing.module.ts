@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule } from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RecipeComponent } from './recipe/recipe.component';
-import { ShoppingComponent } from './shopping/shopping.component';
-import { EmptyRecipeComponent } from './recipe/empty-recipe/empty-recipe.component';
-import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {RecipeComponent} from './recipe/recipe.component';
+import {ShoppingComponent} from './shopping/shopping.component';
+import {EmptyRecipeComponent} from './recipe/empty-recipe/empty-recipe.component';
+import {RecipeDetailComponent} from './recipe/recipe-detail/recipe-detail.component';
+import {RecipeEditComponent} from './recipe/recipe-edit/recipe-edit.component';
 
 /**
  * Sequencing is always important in root & child routes.
  */
 const appRoutes: Routes = [
   { path: 'recipe', component: RecipeComponent, children: [
-      {path: '', component: EmptyRecipeComponent},
-      {path: ':id', component: RecipeDetailComponent},
-      {path: 'create', component: RecipeEditComponent},
+      {path: '', component: EmptyRecipeComponent},           // at first load
+      {path: ':id', component: RecipeDetailComponent},       // on selected
+      {path: 'create', component: RecipeEditComponent},      // detect create or edit
       {path: ':id/edit', component: RecipeEditComponent},
     ] },
   { path: 'shopping', component: ShoppingComponent },

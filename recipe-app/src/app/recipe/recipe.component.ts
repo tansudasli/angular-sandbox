@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import { Recipe } from './recipe.model';
-import {RecipeService} from './recipe.service';
 import {Subscription} from 'rxjs';
+
+import {Recipe} from './recipe.model';
+import {RecipeService} from './recipe.service';
 
 @Component({
   selector: 'app-recipe',
@@ -9,10 +10,11 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent implements OnInit, OnDestroy {
-  selectedRecipe: Recipe;
+  private selectedRecipe: Recipe;
   private recipeSubscription: Subscription;
 
   constructor(public rs: RecipeService) {
+
     this.recipeSubscription = rs.recipeSelected.subscribe((recipe) => {
       this.selectedRecipe = recipe;
     });
@@ -20,6 +22,7 @@ export class RecipeComponent implements OnInit, OnDestroy {
 
   ngOnInit() { }
 
+  // TODO: selectedRecipe should be cleared on destroy and newRecipe btn
   ngOnDestroy(): void {
     console.log('selectedRecipe cleaned !!');
 

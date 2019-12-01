@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
+import {Subject, Subscription} from 'rxjs';
+
 import {Recipe} from './recipe.model';
 import {Ingredient} from '../ingredient.model';
-import {Subject, Subscription} from 'rxjs';
 
 /**
  * data
@@ -15,6 +16,7 @@ export class RecipeService {
 
   // we can subscribe this to get selected recipe. it is an observable !
   // EventEmitter replaced w/ Subject - a better way
+  // below value is also available ActivatedRoute as an observable
   recipeSelected = new Subject<Recipe>();
 
   recipes: Recipe[] = [
@@ -37,19 +39,21 @@ export class RecipeService {
     new Recipe('corn',
       'corn that includes energizing Vitamin B',
       'https://www.superhealthykids.com/wp-content/uploads/uploads/files/10732/large/corn.png',
-      [ new Ingredient('cup zucchini', '2'),
-        new Ingredient('cup grated carrot', '2'),
-        new Ingredient('cup corn, canned', '1'),
-        new Ingredient('large egg', '1'),
-        new Ingredient('cup yogurt, plain', '1/8'),
-        new Ingredient('teaspoon salt', '1/2'),
-        new Ingredient('cup flour', '1/2'),
-        new Ingredient('cup cornmeal, yellow', '1/2'),
-        new Ingredient('teaspoon baking powder', '2'),
-        new Ingredient('cup cheddar cheese, shredded', '1/2'),
-        new Ingredient('tablespoon olive oil', '1'),
-        new Ingredient('teaspoon black pepper, ground', '1/8')
-      ])
+      [
+                  new Ingredient('cup zucchini', '2'),
+                  new Ingredient('cup grated carrot', '2'),
+                  new Ingredient('cup corn, canned', '1'),
+                  new Ingredient('large egg', '1'),
+                  new Ingredient('cup yogurt, plain', '1/8'),
+                  new Ingredient('teaspoon salt', '1/2'),
+                  new Ingredient('cup flour', '1/2'),
+                  new Ingredient('cup cornmeal, yellow', '1/2'),
+                  new Ingredient('teaspoon baking powder', '2'),
+                  new Ingredient('cup cheddar cheese, shredded', '1/2'),
+                  new Ingredient('tablespoon olive oil', '1'),
+                  new Ingredient('teaspoon black pepper, ground', '1/8')
+      ]
+    )
 
   ];
 

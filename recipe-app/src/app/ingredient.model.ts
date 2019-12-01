@@ -1,4 +1,6 @@
-
+/**
+ * It is necessary for both shopping-list and recipe.
+ */
 export class Ingredient {
 
   // behind the scenes, sets and creates name and amount fields
